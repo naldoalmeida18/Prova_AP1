@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ghostwhite;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.login-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: gray;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.container {
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.option {
+  cursor: pointer;
+  border: 2px gainsboro;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.option img {
+  width: 100px;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+form select, input[type="text"] {
+  padding: 10px;
+  border: 1px ghostwhite;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#result {
+  text-align: center;
+  margin-top: 20px;
+}

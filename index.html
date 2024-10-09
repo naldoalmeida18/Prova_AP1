@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montagem de Equipamento:</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Escolha seu Equipamento:</h1>
+  <div class="container">
+    <h2>Você deseja obter informações sobre:</h2>
+    <div class="options">
+      <div class="option" onclick="showMenu('notebook')">
+        <img src="notebook.png" alt="Notebook">
+        <p>Notebook</p>
+      </div>
+      <div class="option" onclick="showMenu('desktop')">
+        <img src="desktop.png" alt="Desktop">
+        <p>Desktop</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="menu" class="menu" style="display:none;">
+    <h2>Monte sua máquina:</h2>
+    
+    <form id="configForm" onsubmit="calculateTotal(event)">
+      <div id="cpu-options">
+        <label for="cpu">Processador:</label>
+        <select name="cpu" id="cpu">
+          <option value="Intelcore-i3,529.40">Processador Intel Core i3-10100F, 4-Core, 8-Threads, 3.6Ghz (4.3Ghz Turbo), Cache 6MB, LGA1200, BX8070110100F - R$529,40</option>
+          <option value="AMD-Ryzen5,670.58">Processador AMD Ryzen 5 4500, 6-Core, 12-Threads, 3.6GHz (4.1GHz Turbo), Cache 11MB, AM4, 100-100000644BOX - R$670,58</option>
+          <option value="Intelcore-i5,762.34">Processador Intel Core i5-10400F, 6-Core, 12-Threads, 2.9Ghz (4.3Ghz Turbo), Cache 12MB, LGA1200, BX8070110400F - R$762,34</option>
+          <option value="AMD-Athlon,388.22">Processador AMD Athlon 3000G, 2-Core, 4-Threads, 3.5GHz, Cache 5MB, AM4, YD3000C6FHSBX - R$388,22</option>
+          <option value="AMD-Ryzen58500,1094.11">Processador AMD Ryzen 5 8500G, 6-Core, 12-Threads, 3.5GHz (5.0GHz Turbo), Cache 22MB, AM5, 100-100000931BOX-BR - R$1094,11</option>
+        </select>
+      </div>
+      <div id="memory-options">
+        <label for="memory">Memória:</label>
+        <select name="memory" id="memory">
+          <option value="TGE-8Gb,122.99">Memoria Team Group Elite, 8GB (1x8GB), 2666MHz, DDR4, C22, Preta, TED48G2666C1901 - R$122,99</option>
+          <option value="Adata-16GB,469,99">Memoria Adata XPG Spectrix D50, RGB, 16GB (1x16GB), DDR4, 4133MHz, C19, Branca, AX4U413316G19J-SW50 - R$469,99</option>
+          <option value="Adata-32GB,659.99">Memoria Adata XPG Spectrix D45G, RGB, 32GB (1x32GB), DDR4, 3600MHz, C18, Preta, AX4U360032G18I-CBKD45G - R$659,99</option>
+          <option value="Corsair-16GB,899.99">Memoria Corsair Dominator Platinum RGB, 16GB (2x8GB), DDR4, 4000MHz, C18, Preta, CMT16GX4M2Z4000C18 - R$899,99</option>
+          <option value="Mancer-32Gb,1385.50">Memoria Mancer Dantalion Z, 32GB (1X32GB), DDR4, 3200MHz, C16, Preta e Branca, MCR-DTLZ-32GB - R$1385,50</option>
+        </select>
+      </div>
+      <div id="storage-options">
+        <label for="armazenamento">Armazenamento:</label>
+        <select name="storage" id="storage">
+          <option value="Apacer-SSD-2TB,1239.99">SSD Apacer AS350X, 2TB, 2.5, Sata III 6GB/s, Leitura 560MB/s, Gravacao 540MB/s, AP2TBAS350XR-1 - R$1239,99</option>
+          <option value="RedDragon-SSD-960GB,579.99">SSD Redragon Spark, 960GB, 2.5, Sata III 6GB/s, Leitura 550 MB/s, Gravacao 420MB/s, GD-308 - R$579,99</option>
+          <option value="TeamGroup-SSD-2TB,1235.99">SSD Team Group Z44A7 Series, 2TB, M.2 2280, PCIe NVMe, Leitura 7000MB/s, Gravacao 6100MB/s, TM8FPV002T0C129 - R$1235,99</option>
+          <option value="NasEndurance-SSD-512GB,403.99">SSD NAS Apacer Endurance PB4480, 512GB, M.2 2280, PCIe NVMe, Leitura 4500MB/s, Gravacao 2500MB/s, AP512GPB4480-R - R$403,99</option>
+          <option value="Kingspec-SSD-4TB,2199.99">SSD Kingspec XG7000, 4TB, M.2 2280, PCIe NVMe, Leitura 7400MB/s, Gravacao 6600MB/s, XG7000-4TB - R$2199,99</option>
+        </select>
+      </div>
+      <div id="os-options">
+        <label for="os">Sistema Operacional:</label>
+        <select name="os" id="os">
+          <option value="Windows11,500">Licença Windows 11 - R$1299,00</option>
+          <option value="Linux,0">Linux - Gratuito</option>
+        </select>
+      </div>
+
+      <div id="monitor-options" style="display:none;">
+        <label for="monitor">Monitor:</label>
+        <select name="monitor" id="monitor">
+          <option value="Monitor-Benq-27pol,3499.00">Monitor Gamer Benq GW2785TC, 27 Pol, IPS, FHD, 5ms, 75Hz,c, HDMI/DP, Preto, 9H.LKNLB.QBA - R$3499,00</option>
+          <option value="Monitor-Acer-23.8pol',949.99">Monitor Gamer Acer Nitro KG240Y, 23.8 Pol, FHD, 180Hz, IPS, 1ms, Preto, UM.QX0AA.502 - R$949,99</option>
+          <option value="Monitor-LG-24pol,1149.99">Monitor Gamer LG, 24 Pol, IPS, FHD, 1ms, 180Hz, FreeSync/G-Sync, HDMI/DP, 24GS60F-B.AWZM - R$1149,99</option>
+          <option value="Monitor-Mancer-21.5pol,519.99">Monitor Gamer Mancer Horizon Z2, 21.5 Pol, VA, FHD, 100Hz, 1ms, HDMI/VGA, MCR-HZN21-BL2 - R$519,99</option>
+          <option value="Monitor-Galax-31.5,1629.99">Monitor Gamer Galax HOF Lite Stellar II, 31.5 Pol, IPS, 4K, UHD, 1ms, 165Hz, HDMI/DP, HFLS31165B4 - R$1629,99</option>
+        </select>
+      </div>
+
+      <label for="name">Nome do Cliente:</label>
+      <input type="text" id="name" name="name" required>
+
+      <button type="submit">Finalizar Montagem</button>
+    </form>
+    
+    <div id="result" style="display:none;">
+      <h2>Configuração Final:</h2>
+      <p id="config"></p>
+      <p id="total"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
